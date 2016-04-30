@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+
+  <!-- 
+    RESOURCES:
+      version: the Download= value from your client's meridian.ini
+      path: folder containing resources in subfolders
+      preloadrooms/..: no need to touch these
+  -->
+  <resources
+    version="10016"
+    path="../../../../Resources/"
+    preloadrooms="false"
+    preloadobjects="false"
+    preloadroomtextures="false"
+    preloadsound="false"
+    preloadmusic="false" />
+
+  <!-- 
+    CONNECTIONS:
+      selectedindex: the 0-based entryindex to use from below
+  -->
+  <connections selectedindex="0">
+    <!-- 
+      CONNECTION:
+        name: just a name for this connection
+        host: DNS or IP of the M59 server
+        port: TCP port of the M59 server 
+        useipv6: if true will use ipv6 to connect
+        stringdictionary: string-resources (get this from the "resource" folder of your client)
+        username: your username
+        password: your password
+        ignorelist: these players will be ignored
+    -->
+    <connection
+      name="103"
+      host="meridian103.openmeridian.org"
+      port="5903"
+      useipv6="false"
+      stringdictionary="rsc0000-103.rsb"
+      username="username"
+      password="password"
+      character="">
+      <ignorelist>
+        <ignore name="PathethicTroll0815" />
+      </ignorelist>
+    </connection>
+  </connections>
+
+  <aliases />
+  
+  <!-- 
+    CONNECTION:
+      majorverson: see client menu help/about
+      minorversion: see client menu help/about
+      logfile: the bot will log also to this file (cleaned at startup, "" to disable)
+  -->
+  <connection
+    majorversion="50"
+    minorversion="34"
+    logfile="bot.log" />
+
+  <!--
+    ADMINS:
+      These players will have "admin" access to your bot. 
+      This will allow certain extra commands/interaction/information.    
+  -->
+  <admins>
+    <item name="Jewish Potato" />
+  </admins>
+  
+  <!--
+    BOT:
+      intervalbroadcast: broadcast offers that often (in seconds, default: 60min)
+      tellonenter: set whisper players when entering room on/off (True/False)
+      chatprefixstring: this will be added as a prefix to some chat the bot makes
+      shopname: this is added to your advertising
+      enabledonations: should bot accept donations or not (True/False)
+      buffprice: the price of buffs
+  -->
+  <bot
+    intervalbroadcast="3600"
+    tellonenter="True"
+    chatprefixstring="~B~r"
+    shopname="~B~bB~ruff ~rB~bot"
+    enabledonations="True"
+    buffprice="3500">
+    
+  </bot>
+</configuration>
