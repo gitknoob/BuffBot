@@ -33,14 +33,10 @@ namespace Meridian59.Bot.Buff
     /// </summary>
     public class BuffBotClient : BotClient<GameTick, ResourceManager, DataController, BuffBotConfig>
     {
-        #region Constants
         protected const string NAME_SHILLING			= "shilling";
         protected const string COMMAND_BUFF				= "buff";
         protected const string COMMAND_GIVECASH			= "givecash";
-        protected const string TELL_THANKS				= "Thank you for business.";
-        protected const string LOG_ADVBROADCASTED		= "Advertisement broadcasted";
-        #endregion
-
+		
         protected bool isGiveCashOffer = false;
         protected bool isMeditateInProcess = false;
         protected bool isBuffingInProcess = false;
@@ -50,7 +46,7 @@ namespace Meridian59.Bot.Buff
         /// </summary>
         public BuffBotClient()
             : base()
-        {                       
+        {
 
         }
 
@@ -319,7 +315,7 @@ namespace Meridian59.Bot.Buff
                 // tell customer
                 SendSayGroupMessage(
                     Data.Trade.TradePartner.ID, 
-                    Config.ChatPrefixString + TELL_THANKS);
+                    Config.ChatPrefixString + "Thank you for business.");
 
                 // preserve partnername (gets cleaned next call)
                 string partnername = String.Copy(Data.Trade.TradePartner.Name);
@@ -632,7 +628,7 @@ namespace Meridian59.Bot.Buff
                         SendSayToMessage(ChatTransmissionType.Everyone, message);
 
                         // log
-                        Log("BOT", LOG_ADVBROADCASTED);
+                        Log("BOT", "Advertisement broadcasted");
 
                         // additionally mark said also
                         GameTick.DidSay(); 

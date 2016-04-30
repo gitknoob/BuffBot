@@ -26,7 +26,6 @@ namespace Meridian59.Bot.Buff
     /// </summary>
     public class BuffBotConfig : BotConfig
     {
-        #region Constants
         protected const string XMLATTRIB_INTERVALBROADCAST = "intervalbroadcast";
         protected const string XMLATTRIB_TELLONENTER = "tellonenter";
         protected const string XMLATTRIB_CHATPREFIXSTRING = "chatprefixstring";
@@ -40,17 +39,13 @@ namespace Meridian59.Bot.Buff
         public const string DEFAULTVAL_SHOPBOT_SHOPNAME = "~B~rB~n~kuff~B~rB~n~kot";
         public const bool DEFAULTVAL_SHOPBOT_ENABLEDONATIONS = true;
         public const uint DEFAULTVAL_SHOPBOT_BUFFPRICE = 3500;
-
-        #endregion
-
-        #region Properties
+		
         public uint IntervalBroadcast { get; protected set; }
         public bool TellOnEnter { get; protected set; }
         public string ChatPrefixString { get; protected set; }
         public string Shopname { get; protected set; }
         public bool Enabledonations { get; protected set; }
         public uint Buffprice { get; protected set; }
-        #endregion
 
         /// <summary>
         /// Constructor
